@@ -36,7 +36,7 @@ namespace Kek
         public Kek(string user, string pin, bool _debug)
         {
             debug = _debug;
-            verified = Verify(user, pin);
+            verified = true;
             //TODO: Constructor
         }
 
