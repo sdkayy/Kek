@@ -1,0 +1,9 @@
+c:\users\sdl\documents\visual studio 2015\Projects\Kek\Kek\bin\Debug\Kek.dll
+c:\users\sdl\documents\visual studio 2015\Projects\Kek\Kek\bin\Debug\Kek.pdb
+c:\users\sdl\documents\visual studio 2015\Projects\Kek\Kek\obj\Debug\Kek.dll
+c:\users\sdl\documents\visual studio 2015\Projects\Kek\Kek\obj\Debug\Kek.pdb
+C:\Users\sdl\documents\visual studio 2015\Projects\Kek\Kek\bin\Debug\Kek.XML
+C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgilityPack.dll
+C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgilityPack.xml
+C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\obj\Debug\Kek.csprojResolveAssemblyReference.cache
