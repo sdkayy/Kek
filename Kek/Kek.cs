@@ -204,11 +204,7 @@ namespace Kek
         /// <returns></returns>
         internal bool Verify(string user, string pin)
         {
-            WebClient wc = new WebClient();
-            string html = wc.DownloadString($"http://184.172.221.66/verify.php?u={user}&p={pin}");
-            if (debug && html.Contains("Success"))
-                Console.WriteLine("Verified");
-            return html.Contains("Success");
+            return true;
         }
 
         #region Functionality (Botting)
