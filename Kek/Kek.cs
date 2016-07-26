@@ -33,7 +33,7 @@ namespace Kek
         /// <param name="user">Username of person using our library</param>
         /// <param name="pin">Passwrod of person using our library</param>
         /// <param name="_debug">Set to true for debug output</param>
-        public Kek(string user, string pin, bool _debug)
+        public Kek(bool _debug)
         {
             debug = _debug;
             verified = true;
