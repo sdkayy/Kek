@@ -2,7 +2,7 @@
 Kek is a public C# Instagram Wrapper!
 
 #Usage
-#Functions None Botting:
+#Functions Non Botting:
 ```Logon(string username, string password)```
 Logs a user on
 
