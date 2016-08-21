@@ -62,7 +62,7 @@ Report a post
 Usage not botting:
 #Logging In
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Username", "Password"))
 {
 	MessageBox.Show("logged in");
@@ -71,7 +71,7 @@ if(kek.Logon("Username", "Password"))
 
 #Registering
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol"))
 {
 	MessageBox.Show("registered");
@@ -80,7 +80,7 @@ if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol"))
 
 #Turbo
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testing123", "Testin123"))
 {
 	if(kek.TurboName("astro")) 
@@ -92,7 +92,7 @@ if(kek.Logon("Testing123", "Testin123"))
 
 #Like
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testin123", "Testing123"))
 {
 	if(kek.Like("https://www.instagram.com/p/BHOReJnjzgo/"))
@@ -104,7 +104,7 @@ if(kek.Logon("Testin123", "Testing123"))
 
 #Follow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testin123", "Testing123"))
 {
 	if(kek.Follow("Testing1234"))
@@ -116,7 +116,7 @@ if(kek.Logon("Testin123", "Testing123"))
 
 #Unfollow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testing123", "Testing123"))
 {
 	if(kek.Unfollow("Testing1234"))
@@ -128,7 +128,7 @@ if(kek.Logon("Testing123", "Testing123"))
 
 #Unlike
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testing123", "Testing123"))
 {
 	if(kek.Unlike("https://www.instagram.com/p/BHOReJnjzgo/"))
@@ -140,7 +140,7 @@ if(kek.Logon("Testing123", "Testing123"))
 
 #Comment
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testing123", "Testing123"))
 {
 	if(kek.Comment("https://www.instagram.com/p/BHOReJnjzgo/", "Okokokok"))
@@ -152,7 +152,7 @@ if(kek.Logon("Testing123", "Testing123"))
 
 #Report
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 if(kek.Logon("Testing123","Testing123"))
 {
 	if(kek.Report("https://www.instagram.com/p/BHOReJnjzgo/", Kek.Kek.ReportType.Nudity)) 
@@ -165,7 +165,7 @@ if(kek.Logon("Testing123","Testing123"))
 Usage for botting:
 Logging In
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Username", "Password", proxy, useragent))
@@ -176,7 +176,7 @@ if(kek.Logon("Username", "Password", proxy, useragent))
 
 #Registering
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol", proxy, useragent))
@@ -187,7 +187,7 @@ if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol", pr
 
 #Turbo
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testing123", "Testin123", proxy, useragent))
@@ -201,7 +201,7 @@ if(kek.Logon("Testing123", "Testin123", proxy, useragent))
 
 #Like
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testin123", "Testing123", proxy, useragent))
@@ -215,7 +215,7 @@ if(kek.Logon("Testin123", "Testing123", proxy, useragent))
 
 #Follow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testin123", "Testing123", proxy, useragent))
@@ -229,7 +229,7 @@ if(kek.Logon("Testin123", "Testing123", proxy, useragent))
 
 #Unfollow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testing123", "Testing123", proxy, useragent))
@@ -243,7 +243,7 @@ if(kek.Logon("Testing123", "Testing123", proxy, useragent))
 
 #Unlike
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testing123", "Testing123", proxy, useragent))
@@ -257,7 +257,7 @@ if(kek.Logon("Testing123", "Testing123", proxy, useragent))
 
 #Comment
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testing123", "Testing123", proxy, useragent))
@@ -271,7 +271,7 @@ if(kek.Logon("Testing123", "Testing123", proxy, useragent))
 
 #Report
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
+Kek.Kek kek = new Kek.Kek(false);
 string proxy = "PROXY:PORT";
 string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
 if(kek.Logon("Testing123","Testing123", proxy, useragent))
