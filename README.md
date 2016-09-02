@@ -1,19 +1,15 @@
 # Kek
 Kek is a public C# Instagram Wrapper!
 
-#Usage
-#Functions None Botting:
+#User.cs
 ```Logon(string username, string password)```
 Logs a user on
 
 ```Register(string username, string password, string email, string name)```
 Registers a user
 
-```TurboName(string username)```
-Turbos a username
-
-```Like(string posturl)```
-Likes a post
+```ChangeName(string username)```
+Changes a username
 
 ```Follow(string username)```
 Follows a user
@@ -21,8 +17,12 @@ Follows a user
 ```Unfollow(string username)```
 Unfollows a user
 
+#Post.cs
 ```Unlike(string pic)```
 Unlike a post
+
+```Like(string posturl)```
+Likes a post
 
 ```Comment(string post, string comment)```
 Comment on a post
@@ -30,40 +30,12 @@ Comment on a post
 ```Report(string post, Kek.Kek.ReportType.TYPE)```
 Report a post
 
-#Functions For Botting:
-```Logon(string username, string password, string proxy, string useragent)```
-Logs a user on
 
-```Register(string username, string password, string email, string name, string proxy, string useragent)```
-Registers a user
-
-```TurboName(string username, string proxy, string useragent)```
-Turbos a username
-
-```Like(string posturl, string proxy, string useragent)```
-Likes a post
-
-```Follow(string username, string proxy, string useragent)```
-Follows a user
-
-```Unfollow(string username, string proxy, string useragent)```
-Unfollows a user
-
-```Unlike(string pic, string proxy, string useragent)```
-Unlike a post
-
-```Comment(string post, string comment, string proxy, string useragent)```
-Comment on a post
-
-```Report(string post, Kek.Kek.ReportType.TYPE, string proxy, string useragent)```
-Report a post
-
-
-Usage not botting:
-#Logging In
+#Login
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Username", "Password"))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+if(user.Logon("Username", "Password"))
 {
 	MessageBox.Show("logged in");
 }
@@ -71,43 +43,34 @@ if(kek.Logon("Username", "Password"))
 
 #Registering
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol"))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+if(user.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol"))
 {
 	MessageBox.Show("registered");
 }
 ```
 
-#Turbo
+#Changing a Name
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testing123", "Testin123"))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+if(user.Logon("Testing123", "Testin123"))
 {
-	if(kek.TurboName("astro")) 
+	if(user.ChangeName("astro")) 
 	{
-		MessageBox.Show("Turboed");
-	}
-}
-```
-
-#Like
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testin123", "Testing123"))
-{
-	if(kek.Like("https://www.instagram.com/p/BHOReJnjzgo/"))
-	{
-		MessageBox.Show("Liked");
+		MessageBox.Show("Name Changed");
 	}
 }
 ```
 
 #Follow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testin123", "Testing123"))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+if(user.Logon("Testin123", "Testing123"))
 {
-	if(kek.Follow("Testing1234"))
+	if(user.Follow("Testing1234"))
 	{
 		MessageBox.Show("Followed");
 	}
@@ -116,139 +79,40 @@ if(kek.Logon("Testin123", "Testing123"))
 
 #Unfollow
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testing123", "Testing123"))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+Kek.Utils.Post post = new Kek.Utils.Post();
+if(user.Logon("Testing123", "Testing123"))
 {
-	if(kek.Unfollow("Testing1234"))
+	if(user.Unfollow("Testing1234"))
 	{
 		MessageBox.Show("Unfollowed");
-	}
-}
-```
-
-#Unlike
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testing123", "Testing123"))
-{
-	if(kek.Unlike("https://www.instagram.com/p/BHOReJnjzgo/"))
-	{
-		MessageBox.Show("Unliked");
-	}
-}
-```
-
-#Comment
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testing123", "Testing123"))
-{
-	if(kek.Comment("https://www.instagram.com/p/BHOReJnjzgo/", "Okokokok"))
-	{
-		MessageBox.Show("Commented");
-	}
-}
-```
-
-#Report
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-if(kek.Logon("Testing123","Testing123"))
-{
-	if(kek.Report("https://www.instagram.com/p/BHOReJnjzgo/", Kek.Kek.ReportType.Nudity)) 
-	{
-		MessageBox.Show("Reported");
-	}
-}
-```
-
-Usage for botting:
-Logging In
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Username", "Password", proxy, useragent))
-{
-	MessageBox.Show("logged in");
-}
-```
-
-#Registering
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Register("Testin123", "Testing123", "testing+1@gmail.com", "Test Lol", proxy, useragent))
-{
-	MessageBox.Show("registered");
-}
-```
-
-#Turbo
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testing123", "Testin123", proxy, useragent))
-{
-	if(kek.TurboName("astro", proxy, useragent)) 
-	{
-		MessageBox.Show("Turboed");
 	}
 }
 ```
 
 #Like
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testin123", "Testing123", proxy, useragent))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+Kek.Utils.Post post = new Kek.Utils.Post();
+if(user.Logon("Testin123", "Testing123"))
 {
-	if(kek.Like("https://www.instagram.com/p/BHOReJnjzgo/", proxy, useragent))
+	if(post.Like("https://www.instagram.com/p/BHOReJnjzgo/"))
 	{
 		MessageBox.Show("Liked");
 	}
 }
 ```
 
-#Follow
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testin123", "Testing123", proxy, useragent))
-{
-	if(kek.Follow("Testing1234", proxy, useragent))
-	{
-		MessageBox.Show("Followed");
-	}
-}
-```
-
-#Unfollow
-```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testing123", "Testing123", proxy, useragent))
-{
-	if(kek.Unfollow("Testing1234", proxy, useragent))
-	{
-		MessageBox.Show("Unfollowed");
-	}
-}
-```
-
 #Unlike
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testing123", "Testing123", proxy, useragent))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+Kek.Utils.Post post = new Kek.Utils.Post();
+if(user.Logon("Testing123", "Testing123"))
 {
-	if(kek.Unlike("https://www.instagram.com/p/BHOReJnjzgo/", proxy, useragent))
+	if(post.Unlike("https://www.instagram.com/p/BHOReJnjzgo/"))
 	{
 		MessageBox.Show("Unliked");
 	}
@@ -257,12 +121,12 @@ if(kek.Logon("Testing123", "Testing123", proxy, useragent))
 
 #Comment
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testing123", "Testing123", proxy, useragent))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+Kek.Utils.Post post = new Kek.Utils.Post();
+if(user.Logon("Testing123", "Testing123"))
 {
-	if(kek.Comment("https://www.instagram.com/p/BHOReJnjzgo/", "Okokokok", proxy, useragent))
+	if(post.Comment("https://www.instagram.com/p/BHOReJnjzgo/", "Okokokok"))
 	{
 		MessageBox.Show("Commented");
 	}
@@ -271,14 +135,17 @@ if(kek.Logon("Testing123", "Testing123", proxy, useragent))
 
 #Report
 ```
-Kek.Kek kek = new Kek.Kek(username, password, false);
-string proxy = "PROXY:PORT";
-string useragent = kek.UAs[new Random().Next(0, kek.UAs.Length - 1)];
-if(kek.Logon("Testing123","Testing123", proxy, useragent))
+Kek.Kek kek = new Kek.Kek();
+Kek.Utils.User user = new Kek.Utils.User();
+Kek.Utils.Post post = new Kek.Utils.Post();
+if(user.Logon("Testing123","Testing123"))
 {
-	if(kek.Report("https://www.instagram.com/p/BHOReJnjzgo/", Kek.Kek.ReportType.Nudity, proxy, useragent)) 
+	if(post.Report("https://www.instagram.com/p/BHOReJnjzgo/", Kek.Kek.ReportType.Nudity)) 
 	{
 		MessageBox.Show("Reported");
 	}
 }
 ```
+
+#Contact
+Instagram: @teh_sdk
