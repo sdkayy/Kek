@@ -7,3 +7,12 @@ C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgility
 C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\bin\Debug\HtmlAgilityPack.xml
 C:\Users\sdl\Documents\Visual Studio 2015\Projects\Kek\Kek\obj\Debug\Kek.csprojResolveAssemblyReference.cache
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\Kek.XML
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\Kek.dll
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\Kek.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\HtmlAgilityPack.dll
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\bin\Debug\HtmlAgilityPack.xml
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\obj\Debug\Kek.csprojResolveAssemblyReference.cache
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\obj\Debug\Kek.dll
+C:\Users\austi\OneDrive\Documents\GitHub\Kek\Kek\obj\Debug\Kek.pdb

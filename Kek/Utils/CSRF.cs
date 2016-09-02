@@ -2,7 +2,7 @@
 
 namespace Kek.Utils
 {
-    class CSRF
+    public class CSRF
     {
 
         public CSRF() { }

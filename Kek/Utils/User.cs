@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Kek.Utils
 {
-    class User
+    public class User
     {
         public User()
         {

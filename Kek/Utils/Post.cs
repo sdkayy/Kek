@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Kek.Utils
 {
-    class Post
+    public class Post
     {
         public Post()
         {
