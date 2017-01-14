@@ -22,6 +22,11 @@ namespace Kek.Utils
 
         internal string temp = string.Empty;
         internal string latestCode = string.Empty;
+		
+		/// <summary>
+        /// Wait for a user to post by calling this and setting a OnNewPost EH!
+        /// </summary>
+        /// <param name="username">Username of who you are waiting to post</param>
         public void WaitForPost(string username)
         {
             while(true)
@@ -101,8 +106,8 @@ namespace Kek.Utils
                 request.Headers.Add("X-Instagram-AJAX", "1");
                 request.Headers.Add("X-Requested-With", "XMLHttpRequest");
                 request.Headers.Add("X-CSRFToken", csrf);
-                request.Headers.Add("Accept-Language", "en-US,en;q=0.8");
-                request.Headers.Add("Cookie", $"mid=VlW1MgAEAAEgkDVr8Pa-nokWXqCF; sessionid={Kek.IGSessionIDLogin}; csrftoken={csrf}; ig_pr=1; ig_vw=1160");
+                request.Headers.Add("Accept-Language", "en-US,en;q=0.5");
+                request.Headers.Add("Cookie", $"mid=WHo0EgAEAAGjz3DOt96UXSXSt8SZ; sessionid={Kek.IGSessionIDLogin}; csrftoken={csrf}; ig_pr=1; ig_vw=1160");
 
                 byte[] postBytes = Encoding.ASCII.GetBytes(post);
                 request.ContentLength = postBytes.Length;
