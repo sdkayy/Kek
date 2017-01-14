@@ -31,6 +31,28 @@ Comment on a post
 Report a post
 
 
+#Waiting for a user to post
+```
+private void button1_Click(object sender, EventArgs e)
+{
+	backgroundWorker1.RunWorkerAsync();
+}
+
+Kek.Utils.Post post;
+private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+{
+	post = new Kek.Utils.Post();
+	post.OnNewPost += new Kek.Utils.Post.NewPost(NewPost);
+	post.WaitForPost("teh_sdk");
+}
+
+private void NewPost(object obj, Kek.Utils.PostArgs args)
+{
+	post.Like(args.Link);
+	MessageBox.Show("SDK Posted and we liked it instantly! Nice!");
+}
+```
+
 #Login
 ```
 Kek.Kek kek = new Kek.Kek();
