@@ -266,6 +266,57 @@ namespace Kek.Utils
         }
 
         /// <summary>
+        /// Gets the amount of followers
+        /// </summary>
+        /// <param name="profile">Profile name (eg teh_sdk)</param>
+        /// <returns></returns>
+        ///
+        /*
+        public int GetFollowerCount(string profile)
+        {
+            try
+            {
+                string id = GetIDProfile(profile);
+                string post = $"";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://www.instagram.com/web/friendships/" + id + "/unfollow/");
+                request.Method = "POST";
+                request.Host = "www.instagram.com";
+                request.KeepAlive = true;
+                request.ContentLength = 0;
+                request.Accept = "";
+                request.Headers.Add("Origin", "https://www.instagram.com");
+                request.Headers.Add("X-Requested-With", "XMLHttpRequest");
+                request.Headers.Add("X-Instagram-AJAX", "1");
+                request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36";
+                request.Headers.Add("X-CSRFToken", csrf);
+                request.Referer = "https://www.instagram.com/" + name + "/";
+                request.Headers.Add("Accept-Encoding", "gzip, deflate, br");
+                request.Headers.Add("Accept-Language", "en-US,en;q=0.8");
+                request.Headers.Add("Cookie", $"sessionid={Kek.IGSessionIDLogin}; s_network=; ig_pr=0.8999999761581421; ig_vw=1517; csrftoken={csrf}; ds_user_id={Kek.LoggedOnID}");
+                byte[] postBytes = Encoding.ASCII.GetBytes(post);
+                request.ContentLength = postBytes.Length;
+                Stream requestStream = request.GetRequestStream();
+
+                requestStream.Write(postBytes, 0, postBytes.Length);
+                requestStream.Close();
+
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                string html = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+                Console.WriteLine(html);
+                return html.Contains("\"result\": \"following\"");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception Throw: {ex}");
+                return false;
+            }
+            return 0;
+        }
+        */
+
+        /// <summary>
         /// Get ID of the profile
         /// </summary>
         /// <param name="name">Name of the profile(username)</param>

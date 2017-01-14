@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Kek.Utils
 {
@@ -11,6 +14,66 @@ namespace Kek.Utils
         public Post()
         {
 
+        }
+
+        public delegate void NewPost(object obj, PostArgs args);
+
+        public event NewPost OnNewPost;
+
+        internal string temp = string.Empty;
+        internal string latestCode = string.Empty;
+        public void WaitForPost(string username)
+        {
+            while(true)
+            {
+                string last = CheckNewPost(username);
+                if (temp.Equals(string.Empty))
+                {
+                    temp = last;
+                }
+                else if (temp.Equals(last))
+                {
+                    continue;
+                }
+                else if (!temp.Equals(last))
+                {
+                    PostArgs myArgs = new PostArgs($"{username} posted", $"https://instagram.com/p/{latestCode}/");
+                    OnNewPost(this, myArgs);
+                    break;
+                }
+                Thread.Sleep(150);
+            }
+        }
+
+        internal string CheckNewPost(string username)
+        {
+            try
+            {
+                string raw = new WebClient().DownloadString($"https://instagram.com/{username}/");
+                string JSONToParse = GetJson(raw);
+                dynamic job = JsonConvert.DeserializeObject(JSONToParse);
+                latestCode = job.entry_data.ProfilePage[0].user.media.nodes[0].code;
+                string latestID = job.entry_data.ProfilePage[0].user.media.nodes[0].id; //Get Latest Posts ID
+                return latestID;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return "";
+            }
+        }
+
+        internal string GetJson(string r)
+        {
+            string pattern = "window._sharedData = (.*)";
+
+            string JSON = string.Empty;
+
+            foreach (Match item in (new Regex(pattern).Matches(r)))
+            {
+                JSON = item.Groups[1].Value.Split(new string[] { ";</script>" }, StringSplitOptions.None)[0];
+            }
+            return JSON;
         }
 
         /// <summary>
