@@ -1,3 +1,5 @@
+# This is no longer actively maintained and very out of date.
+
 # Kek
 Kek is a public C# Instagram Wrapper!
 
